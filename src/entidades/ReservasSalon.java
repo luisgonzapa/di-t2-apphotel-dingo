@@ -36,6 +36,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "ReservasSalon.findByNumPersonas", query = "SELECT r FROM ReservasSalon r WHERE r.numPersonas = :numPersonas")
     , @NamedQuery(name = "ReservasSalon.findByTipoCocina", query = "SELECT r FROM ReservasSalon r WHERE r.tipoCocina = :tipoCocina")
     , @NamedQuery(name = "ReservasSalon.findByFecha", query = "SELECT r FROM ReservasSalon r WHERE r.fecha = :fecha")
+    , @NamedQuery(name = "ReservasSalon.findByNumHabitaciones", query = "SELECT r FROM ReservasSalon r WHERE r.numHabitaciones = :numHabitaciones")
+    , @NamedQuery(name = "ReservasSalon.findByNumDias", query = "SELECT r FROM ReservasSalon r WHERE r.numDias = :numDias")
     , @NamedQuery(name = "ReservasSalon.findByCliente", query = "SELECT r FROM ReservasSalon r WHERE r.dniCliente = :dniCliente")
 })
 public class ReservasSalon implements Serializable {
@@ -58,6 +60,10 @@ public class ReservasSalon implements Serializable {
     @Column(name = "FECHA")
     @Temporal(TemporalType.DATE)
     private Date fecha;
+    @Column(name = "NUM_HABITACIONES")
+    private Integer numHabitaciones;
+    @Column(name = "NUM_DIAS")
+    private Integer numDias;
     @JoinColumn(name = "DNI_CLIENTE", referencedColumnName = "DNI")
     @ManyToOne(optional = false)
     private Cliente dniCliente;
@@ -114,6 +120,22 @@ public class ReservasSalon implements Serializable {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public Integer getNumHabitaciones() {
+        return numHabitaciones;
+    }
+
+    public void setNumHabitaciones(Integer numHabitaciones) {
+        this.numHabitaciones = numHabitaciones;
+    }
+
+    public Integer getNumDias() {
+        return numDias;
+    }
+
+    public void setNumDias(Integer numDias) {
+        this.numDias = numDias;
     }
 
     public Cliente getDniCliente() {
