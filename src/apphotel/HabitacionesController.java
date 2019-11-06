@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package di_t2_apphotel;
+package apphotel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,9 +19,10 @@ import javafx.scene.layout.AnchorPane;
 /**
  * FXML Controller class
  *
- * 
+ * @author Usuario
  */
 public class HabitacionesController implements Initializable {
+
     @FXML
     private AnchorPane rootSecundaria;
     @FXML
