@@ -9,15 +9,17 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootSecundaria" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apphotel.SalonHabanaController">
+<AnchorPane id="AnchorPane" fx:id="rootSecundaria" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="di_t2_apphotel.SalonHabanaController">
    <children>
-      <VBox layoutX="1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="1.0">
+      <VBox layoutX="-10.0" prefHeight="400.0" prefWidth="609.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
@@ -34,13 +36,13 @@
                         <Insets top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="textFieldDNI" />
+                  <TextField prefHeight="25.0" prefWidth="149.0" />
                   <Label text="Nombre:">
                      <HBox.margin>
                         <Insets left="5.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="textFieldNombre" prefHeight="25.0" prefWidth="313.0" />
+                  <TextField editable="false" prefHeight="25.0" prefWidth="313.0" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -53,13 +55,13 @@
                         <Insets top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="textFieldDireccion" prefHeight="25.0" prefWidth="233.0" />
+                  <TextField editable="false" prefHeight="25.0" prefWidth="233.0" />
                   <Label text="Teléfono:">
                      <HBox.margin>
                         <Insets left="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="textFieldTelefono" prefHeight="25.0" prefWidth="215.0" />
+                  <TextField editable="false" prefHeight="25.0" prefWidth="215.0" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -88,13 +90,13 @@
                <children>
                   <VBox prefHeight="74.0" prefWidth="100.0">
                      <children>
-                        <RadioButton fx:id="radioButtonBanquete" mnemonicParsing="false" onAction="#isSelectedBanquete" text="Banquete" />
-                        <RadioButton fx:id="radioButtonJornada" mnemonicParsing="false" onAction="#isSelectedJornada" text="Jornada">
+                        <RadioButton mnemonicParsing="false" text="Banquete" />
+                        <RadioButton mnemonicParsing="false" text="Jornada">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </RadioButton>
-                        <RadioButton fx:id="radioButtonCongreso" mnemonicParsing="false" onAction="#isSelectedCongreso" text="Congreso">
+                        <RadioButton mnemonicParsing="false" text="Congreso">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -105,22 +107,22 @@
                      <children>
                         <HBox layoutX="1.0" prefHeight="31.0" prefWidth="464.0">
                            <children>
-                              <Label fx:id="labelPersonas" disable="true" text="Número de personas:">
+                              <Label text="Número de personas:">
                                  <HBox.margin>
                                     <Insets top="3.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="textFieldNumPer" disable="true" prefHeight="25.0" prefWidth="31.0">
+                              <TextField prefHeight="25.0" prefWidth="31.0">
                                  <HBox.margin>
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </TextField>
-                              <Label fx:id="labelTipoCocina" disable="true" text="Tipo de cocina:">
+                              <Label text="Tipo de cocina:">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <ComboBox fx:id="comboBoxTipo" disable="true" prefHeight="25.0" prefWidth="200.0" promptText="No precisa">
+                              <ComboBox prefHeight="25.0" prefWidth="200.0" promptText="No precisa">
                                  <HBox.margin>
                                     <Insets left="25.0" />
                                  </HBox.margin>
@@ -129,20 +131,20 @@
                         </HBox>
                         <HBox layoutX="1.0" layoutY="35.0" prefHeight="29.0" prefWidth="464.0">
                            <children>
-                              <CheckBox fx:id="checkBoxHabi" disable="true" mnemonicParsing="false" text="¿Necesitas habitaciones?">
+                              <CheckBox disable="true" mnemonicParsing="false" text="¿Necesitas habitaciones?">
                                  <HBox.margin>
                                     <Insets left="10.0" top="10.0" />
                                  </HBox.margin>
                               </CheckBox>
-                              <Label fx:id="labelNumHab" disable="true" text="¿Cuantas?">
+                              <Label text="¿Cuantas?">
                                  <opaqueInsets>
                                     <Insets top="10.0" />
                                  </opaqueInsets>
                                  <HBox.margin>
-                                    <Insets left="10.0" top="10.0" />
+                                    <Insets top="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="textFieldNumHab" disable="true" prefHeight="25.0" prefWidth="31.0">
+                              <TextField prefHeight="25.0" prefWidth="31.0">
                                  <HBox.margin>
                                     <Insets left="3.0" top="5.0" />
                                  </HBox.margin>
@@ -155,13 +157,13 @@
             </HBox>
             <HBox prefHeight="49.0" prefWidth="560.0">
                <children>
-                  <DatePicker fx:id="datePickerEvento" prefHeight="25.0" prefWidth="213.0" promptText="Fecha de evento" />
-                  <Label fx:id="labelNumDias" disable="true" text="Número de días:">
+                  <DatePicker prefHeight="25.0" prefWidth="213.0" promptText="Fecha de evento" />
+                  <Label text="Número de días:">
                      <HBox.margin>
                         <Insets left="15.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TextFieldNumDias" disable="true" prefHeight="25.0" prefWidth="31.0">
+                  <TextField prefHeight="25.0" prefWidth="31.0">
                      <HBox.margin>
                         <Insets left="3.0" />
                      </HBox.margin>
@@ -173,26 +175,41 @@
                      <children>
                         <HBox prefHeight="26.0" prefWidth="209.0">
                            <children>
-                              <Label fx:id="labelTipo" text="Tipo:" visible="false">
+                              <Label text="Tipo:">
                                  <HBox.margin>
                                     <Insets left="15.0" top="5.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label fx:id="labelOpcion" text="Banquete" visible="false">
+                              <Label text="Banquete">
                                  <HBox.margin>
                                     <Insets left="10.0" top="5.0" />
                                  </HBox.margin>
                               </Label>
                            </children>
                         </HBox>
+                        <HBox prefHeight="23.0" prefWidth="209.0">
+                           <children>
+                              <Label text="Seleccionar personas:">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField prefHeight="25.0" prefWidth="29.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
             </HBox>
-            <HBox prefHeight="32.0" prefWidth="560.0">
+            <Pane prefHeight="54.0" prefWidth="560.0">
+               <children>
+                  <ImageView fitHeight="53.0" fitWidth="294.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Recursos/salonHabana.jpg" />
+                     </image></ImageView>
+               </children>
+            </Pane>
+            <HBox prefHeight="26.0" prefWidth="558.0">
                <children>
                   <HBox prefHeight="31.0" prefWidth="354.0">
                      <children>
@@ -227,9 +244,6 @@
                      </children>
                   </HBox>
                </children>
-               <VBox.margin>
-                  <Insets left="20.0" top="30.0" />
-               </VBox.margin>
             </HBox>
          </children>
       </VBox>
