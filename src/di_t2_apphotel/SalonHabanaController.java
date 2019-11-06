@@ -19,43 +19,23 @@ public class SalonHabanaController implements Initializable
 {
     @FXML
     private AnchorPane rootSecundaria;
-    @FXML
     private TextField textFieldDNI;
-    @FXML
     private TextField textFieldNombre;
-    @FXML
     private TextField textFieldDireccion;
-    @FXML
     private ComboBox<?> comboBoxTipo;
-    @FXML
     private TextField textFieldTelefono;
-    @FXML
     private RadioButton radioButtonBanquete;
-    @FXML
     private RadioButton radioButtonJornada;
-    @FXML
     private RadioButton radioButtonCongreso;
-    @FXML
     private TextField textFieldNumPer;
-    @FXML
     private CheckBox checkBoxHabi;
-    @FXML
     private TextField textFieldNumHab;
-    @FXML
-    private DatePicker datePickerEvento;
-    @FXML
     private TextField TextFieldNumDias;
-    @FXML
     private Label labelTipo;
-    @FXML
     private Label labelPersonas;
-    @FXML
     private Label labelTipoCocina;
-    @FXML
     private Label labelNumHab;
-    @FXML
     private Label labelNumDias;
-    @FXML
     private Label labelOpcion;
 
     @Override
@@ -89,7 +69,6 @@ public class SalonHabanaController implements Initializable
         rootMain.getChildren().remove(rootSecundaria);    
     }
 
-    @FXML
     private void isSelectedBanquete(ActionEvent event) {
         limpiarDatosReserva();
         radioButtonJornada.setSelected(false);
@@ -103,7 +82,6 @@ public class SalonHabanaController implements Initializable
         labelOpcion.setVisible(true);
     }
 
-    @FXML
     private void isSelectedJornada(ActionEvent event) {
         limpiarDatosReserva();
         radioButtonBanquete.setSelected(false);
@@ -115,7 +93,6 @@ public class SalonHabanaController implements Initializable
         labelOpcion.setVisible(true);
     }
 
-    @FXML
     private void isSelectedCongreso(ActionEvent event) {
         limpiarDatosReserva();
         radioButtonJornada.setSelected(false);
