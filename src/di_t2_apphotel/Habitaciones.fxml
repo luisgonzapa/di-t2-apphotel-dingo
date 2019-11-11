@@ -21,7 +21,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane id="AnchorPane" fx:id="rootSecundaria" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="di_t2_apphotel.HabitacionesController">
+
    <children>
       <VBox layoutX="-10.0" prefHeight="400.0" prefWidth="609.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <padding>
@@ -197,7 +199,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </RadioButton>
-                        <Button mnemonicParsing="false" onAction="#onActionButtonLimpiar" text="Limpiar">
+                        <Button fx:id="cleanbtn" mnemonicParsing="false" onAction="#onActionButtonLimpiar" text="Limpiar">
                            <VBox.margin>
                               <Insets top="15.0" />
                            </VBox.margin>
@@ -217,15 +219,19 @@
                               <Insets top="20.0" />
                            </padding>
                            <VBox.margin>
+
                               <Insets left="240.0" />
+
                            </VBox.margin>
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                         </CheckBox>
+
                         <Label prefHeight="46.0" prefWidth="340.0" text="En virtud de la ley de sanidad se informa a los clientes de que solo se podra fumar en las habitaciones reservadas para tal fin." wrapText="true">
                            <VBox.margin>
                               <Insets bottom="-25.0" />
+
                            </VBox.margin>
                         </Label>
                         <HBox prefHeight="45.0" prefWidth="364.0">
@@ -236,7 +242,7 @@
                               <Insets top="25.0" />
                            </VBox.margin>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#onActionButtonAceptar" prefHeight="25.0" prefWidth="67.0" text="Aceptar">
+                              <Button fx:id="savebtn" mnemonicParsing="false" onAction="#onActionButtonAceptar" prefHeight="25.0" prefWidth="67.0" text="Aceptar">
                                  <HBox.margin>
                                     <Insets left="125.0" />
                                  </HBox.margin>
@@ -244,7 +250,7 @@
                                     <DropShadow />
                                  </effect>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#onActionButtonCancelar" prefHeight="25.0" prefWidth="72.0" text="Cancelar">
+                              <Button fx:id="cancelbtn" mnemonicParsing="false" onAction="#onActionButtonCancelar" prefHeight="25.0" prefWidth="72.0" text="Cancelar">
                                  <HBox.margin>
                                     <Insets left="25.0" />
                                  </HBox.margin>

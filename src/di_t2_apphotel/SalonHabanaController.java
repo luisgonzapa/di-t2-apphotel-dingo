@@ -1,4 +1,4 @@
-package di_t2_apphotel;
+package DI_T2_AppHotel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -8,11 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 
 
 public class SalonHabanaController implements Initializable 
@@ -22,6 +20,7 @@ public class SalonHabanaController implements Initializable
     private TextField textFieldDNI;
     private TextField textFieldNombre;
     private TextField textFieldDireccion;
+
     private ComboBox<?> comboBoxTipo;
     private TextField textFieldTelefono;
     private RadioButton radioButtonBanquete;
@@ -38,6 +37,7 @@ public class SalonHabanaController implements Initializable
     private Label labelNumDias;
     private Label labelOpcion;
 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
@@ -46,6 +46,7 @@ public class SalonHabanaController implements Initializable
 
     @FXML
     private void onActionButtonLimpiar(ActionEvent event) {
+
         textFieldDNI.setText("");
         textFieldNombre.setText("");
         textFieldDireccion.setText("");
@@ -56,7 +57,7 @@ public class SalonHabanaController implements Initializable
         radioButtonCongreso.setSelected(false);
         limpiarDatosReserva();
         datePickerEvento.setValue(null);
-        
+
     }
 
     @FXML
@@ -65,6 +66,8 @@ public class SalonHabanaController implements Initializable
 
     @FXML
     private void onActionButtonCancelar(ActionEvent event) {
+
+
         StackPane rootMain =(StackPane) rootSecundaria.getScene().getRoot();
         rootMain.getChildren().remove(rootSecundaria);    
     }
@@ -125,7 +128,5 @@ public class SalonHabanaController implements Initializable
         labelTipo.setVisible(false);
         labelOpcion.setVisible(false);
         comboBoxTipo.setDisable(true);
-    }
-    
-    
+    }   
 }
