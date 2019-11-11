@@ -17,32 +17,26 @@ public class SalonHabanaController implements Initializable
 {
     @FXML
     private AnchorPane rootSecundaria;
-    @FXML
     private TextField textFieldDNI;
-    @FXML
     private TextField textFieldNombre;
-    @FXML
     private TextField textFieldDireccion;
-    @FXML
-    private TextField textFieldLocalidad;
-    @FXML
-    private TextField textFieldProvincia;
-    @FXML
-    private DatePicker datePickerLlegada;
-    @FXML
-    private DatePicker datePickerSalida;
-    @FXML
-    private ComboBox<?> comboBoxNumero;
-    @FXML
+
     private ComboBox<?> comboBoxTipo;
-    @FXML
-    private CheckBox checkBoxFumador;
-    @FXML
-    private RadioButton radioButtonAlojamiento;
-    @FXML
-    private RadioButton radioButtonMedia;
-    @FXML
-    private RadioButton radioButtonCompleta;
+    private TextField textFieldTelefono;
+    private RadioButton radioButtonBanquete;
+    private RadioButton radioButtonJornada;
+    private RadioButton radioButtonCongreso;
+    private TextField textFieldNumPer;
+    private CheckBox checkBoxHabi;
+    private TextField textFieldNumHab;
+    private TextField TextFieldNumDias;
+    private Label labelTipo;
+    private Label labelPersonas;
+    private Label labelTipoCocina;
+    private Label labelNumHab;
+    private Label labelNumDias;
+    private Label labelOpcion;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -52,6 +46,18 @@ public class SalonHabanaController implements Initializable
 
     @FXML
     private void onActionButtonLimpiar(ActionEvent event) {
+
+        textFieldDNI.setText("");
+        textFieldNombre.setText("");
+        textFieldDireccion.setText("");
+        textFieldTelefono.setText("");
+
+        radioButtonBanquete.setSelected(false);
+        radioButtonJornada.setSelected(false);
+        radioButtonCongreso.setSelected(false);
+        limpiarDatosReserva();
+        datePickerEvento.setValue(null);
+
     }
 
     @FXML
@@ -60,6 +66,67 @@ public class SalonHabanaController implements Initializable
 
     @FXML
     private void onActionButtonCancelar(ActionEvent event) {
+
+
+        StackPane rootMain =(StackPane) rootSecundaria.getScene().getRoot();
+        rootMain.getChildren().remove(rootSecundaria);    
+    }
+
+    private void isSelectedBanquete(ActionEvent event) {
+        limpiarDatosReserva();
+        radioButtonJornada.setSelected(false);
+        radioButtonCongreso.setSelected(false);
+        labelPersonas.setDisable(false);
+        textFieldNumPer.setDisable(false);
+        labelTipoCocina.setDisable(false);
+        comboBoxTipo.setDisable(false);
+        labelTipo.setVisible(true);
+        labelOpcion.setText("Banquete");
+        labelOpcion.setVisible(true);
+    }
+
+    private void isSelectedJornada(ActionEvent event) {
+        limpiarDatosReserva();
+        radioButtonBanquete.setSelected(false);
+        radioButtonCongreso.setSelected(false);
+        labelPersonas.setDisable(false);
+        textFieldNumPer.setDisable(false);
+        labelTipo.setVisible(true);
+        labelOpcion.setText("Jornada");
+        labelOpcion.setVisible(true);
+    }
+
+    private void isSelectedCongreso(ActionEvent event) {
+        limpiarDatosReserva();
+        radioButtonJornada.setSelected(false);
+        radioButtonBanquete.setSelected(false);
+        labelPersonas.setDisable(false);
+        textFieldNumPer.setDisable(false);
+        checkBoxHabi.setDisable(false);
+        labelNumHab.setDisable(false);
+        textFieldNumHab.setDisable(false);
+        labelNumDias.setDisable(false);
+        TextFieldNumDias.setDisable(false);
+        labelTipo.setVisible(true);
+        labelOpcion.setText("Congreso");
+        labelOpcion.setVisible(true);
     }
     
+    private void limpiarDatosReserva(){
+        labelPersonas.setDisable(true);
+        labelTipoCocina.setDisable(true);
+        checkBoxHabi.setSelected(false);
+        checkBoxHabi.setDisable(true);
+        textFieldNumPer.setText("");
+        textFieldNumPer.setDisable(true);
+        labelNumHab.setDisable(true);
+        textFieldNumHab.setText("");
+        textFieldNumHab.setDisable(true);
+        labelNumDias.setDisable(true);
+        TextFieldNumDias.setText("");
+        TextFieldNumDias.setDisable(true);
+        labelTipo.setVisible(false);
+        labelOpcion.setVisible(false);
+        comboBoxTipo.setDisable(true);
+    }   
 }
