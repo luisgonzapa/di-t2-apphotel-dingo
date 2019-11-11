@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootSecundaria" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apphotel.HabitacionesController">
+<AnchorPane id="AnchorPane" fx:id="rootSecundaria" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DI_T2_AppHotel.HabitacionesController">
    <children>
       <VBox layoutX="-10.0" prefHeight="400.0" prefWidth="609.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <padding>
@@ -197,7 +197,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </RadioButton>
-                        <Button mnemonicParsing="false" onAction="#onActionButtonLimpiar" text="Limpiar">
+                        <Button fx:id="cleanbtn" mnemonicParsing="false" onAction="#onActionButtonLimpiar" text="Limpiar">
                            <VBox.margin>
                               <Insets top="15.0" />
                            </VBox.margin>
@@ -212,17 +212,20 @@
                   </VBox>
                   <VBox prefHeight="128.0" prefWidth="294.0">
                      <children>
-                        <CheckBox fx:id="checkBoxFumador" mnemonicParsing="false" prefHeight="0.0" prefWidth="72.0" text="Fumador">
+                        <CheckBox fx:id="checkBoxFumador" mnemonicParsing="false" prefHeight="27.0" prefWidth="75.0" text="Fumador">
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
                            <VBox.margin>
-                              <Insets left="220.0" top="10.0" />
+                              <Insets left="220.0" />
                            </VBox.margin>
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                         </CheckBox>
-                        <Label prefHeight="41.0" prefWidth="302.0" text="En virtud de la ley de sanidad se informa a los clientes de que solo se podra fumar en las habitaciones reservadas para tal fin." wrapText="true">
+                        <Label prefHeight="51.0" prefWidth="274.0" text="En virtud de la ley de sanidad se informa a los clientes de que solo se podra fumar en las habitaciones reservadas para tal fin." wrapText="true">
                            <VBox.margin>
-                              <Insets bottom="-25.0" left="5.0" />
+                              <Insets bottom="-25.0" left="10.0" top="10.0" />
                            </VBox.margin>
                         </Label>
                         <HBox prefHeight="41.0" prefWidth="318.0">
@@ -233,7 +236,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#onActionButtonAceptar" prefHeight="25.0" prefWidth="67.0" text="Aceptar">
+                              <Button fx:id="savebtn" mnemonicParsing="false" onAction="#onActionButtonAceptar" prefHeight="25.0" prefWidth="67.0" text="Aceptar">
                                  <HBox.margin>
                                     <Insets left="125.0" />
                                  </HBox.margin>
@@ -241,7 +244,7 @@
                                     <DropShadow />
                                  </effect>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#onActionButtonCancelar" prefHeight="25.0" prefWidth="72.0" text="Cancelar">
+                              <Button fx:id="cancelbtn" mnemonicParsing="false" onAction="#onActionButtonCancelar" prefHeight="25.0" prefWidth="72.0" text="Cancelar">
                                  <HBox.margin>
                                     <Insets left="25.0" />
                                  </HBox.margin>

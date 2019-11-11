@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package di_t2_apphotel;
+package DI_T2_AppHotel;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -16,16 +11,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Ailla
- */
-public class DI_T2_AppHotel extends Application {
-       
+
+public class AppHotel extends Application 
+{
+    
     @Override
     public void start(Stage primaryStage) 
     {
@@ -55,7 +51,9 @@ public class DI_T2_AppHotel extends Application {
         // Añade menuPrincipal a VBox
         ((VBox) escena.getRoot()).getChildren().addAll(menuPrincipal);
         
-/*       
+        
+        
+/*      
         // Imagen de fondo
         Image img = new Image(getClass().getResourceAsStream("Recursos/imagenPrincipal.jpg"));
         ImageView im = new ImageView(img);
@@ -79,7 +77,7 @@ public class DI_T2_AppHotel extends Application {
             {
                 root1 = (Parent)fxmlLoader.load();
             } catch (IOException ex) {
-                Logger.getLogger(DI_T2_AppHotel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AppHotel.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             //Creame un nuevo Stage o para que nos entendamos una nueva ventana windows vacía
@@ -106,7 +104,7 @@ public class DI_T2_AppHotel extends Application {
             {
                 root1 = (Parent)fxmlLoader.load();
             } catch (IOException ex) {
-                Logger.getLogger(DI_T2_AppHotel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AppHotel.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             //Creame un nuevo Stage o para que nos entendamos una nueva ventana windows vacía
