@@ -8,9 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 
 
 public class SalonHabanaController implements Initializable 
@@ -36,6 +38,7 @@ public class SalonHabanaController implements Initializable
     private Label labelNumHab;
     private Label labelNumDias;
     private Label labelOpcion;
+    private DatePicker datePickerEvento;
 
 
     @Override
