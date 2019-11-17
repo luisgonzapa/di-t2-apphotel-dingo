@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="di_t2_apphotel.DI_T2_AppHotelController">
+   <children>
+      <VBox layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <MenuBar id="MenuBarPrincipal">
+              <menus>
+                <Menu id="MenuClientes" mnemonicParsing="false" text="Clientes">
+                     <items>
+                        <MenuItem id="cliente" fx:id="cliente" mnemonicParsing="false" onAction="#cliente" text="Ver Clientes" />
+                     </items>
+                </Menu>
+                <Menu id="MenuReservas" fx:id="reservas" mnemonicParsing="false" text="Reservas">
+                  <items>
+                    <MenuItem id="habitacion" fx:id="habitaciones" mnemonicParsing="false" onAction="#habitacion" text="Habitaciones" />
+                    <MenuItem id="salon" fx:id="salon" mnemonicParsing="false" onAction="#salon" text="Salón Habana" />
+                  </items>
+                </Menu>
+                <Menu id="menuAyuda" fx:id="ayuda" mnemonicParsing="false" text="Ayuda" />
+              </menus>           
+            </MenuBar>
+            <ImageView id="ImageViewPrincipal" fitHeight="403.0" fitWidth="686.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Recursos/imagenPrincipal.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</Pane>

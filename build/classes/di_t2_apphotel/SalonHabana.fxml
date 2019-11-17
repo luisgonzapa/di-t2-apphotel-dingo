@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootSecundaria" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="di_t2_apphotel.SalonHabanaController">
+
+   <children>
+      <VBox layoutX="-10.0" prefHeight="400.0" prefWidth="609.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label text="Datos del cliente" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="29.0" prefWidth="560.0">
+               <children>
+                  <Label text="DNI/CIF:">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="textFieldDNI" prefHeight="25.0" prefWidth="149.0" />
+                  <Label text="Nombre:">
+                     <HBox.margin>
+                        <Insets left="5.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="textFieldNombre" prefHeight="25.0" prefWidth="313.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="560.0">
+               <children>
+                  <Label text="Dirección:">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="textFieldDireccion" prefHeight="25.0" prefWidth="233.0" />
+                  <Label text="Teléfono:">
+                     <HBox.margin>
+                        <Insets left="10.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="textFieldTelefono" prefHeight="25.0" prefWidth="215.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Label text="Datos de la reserva" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Tipo de evento">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="74.0" prefWidth="560.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="74.0" prefWidth="100.0">
+                     <children>
+                        <RadioButton fx:id="radioButtonBanquete" mnemonicParsing="false" onAction="#isSelectedBanquete" text="Banquete" />
+                        <RadioButton fx:id="radioButtonJornada" mnemonicParsing="false" onAction="#isSelectedJornada" text="Jornada">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radioButtonCongreso" mnemonicParsing="false" onAction="#isSelectedCongreso" text="Congreso">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="79.0" prefWidth="464.0">
+                     <children>
+                        <HBox layoutX="1.0" prefHeight="31.0" prefWidth="464.0">
+                           <children>
+                              <Label fx:id="labelPersonas" text="Número de personas:">
+                                 <HBox.margin>
+                                    <Insets top="3.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="textFieldNumPer" prefHeight="25.0" prefWidth="31.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label fx:id="labelTipoCocina" text="Tipo de cocina:">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <ComboBox fx:id="comboBoxTipo" prefHeight="25.0" prefWidth="200.0">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="1.0" layoutY="35.0" prefHeight="29.0" prefWidth="464.0">
+                           <children>
+                              <CheckBox fx:id="checkBoxHabi" disable="true" mnemonicParsing="false" onAction="#onActionButtonHab" text="¿Necesitas habitaciones?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <Label fx:id="labelNumHab" text="¿Cuantas?">
+                                 <opaqueInsets>
+                                    <Insets top="10.0" />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="textFieldNumHab" prefHeight="25.0" prefWidth="31.0">
+                                 <HBox.margin>
+                                    <Insets left="3.0" top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <HBox prefHeight="49.0" prefWidth="560.0">
+               <children>
+                  <DatePicker fx:id="datePickerEvento" prefHeight="25.0" prefWidth="213.0" promptText="Fecha de evento" />
+                  <Label fx:id="labelNumDias" text="Número de días:">
+                     <HBox.margin>
+                        <Insets left="15.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="TextFieldNumDias" prefHeight="25.0" prefWidth="31.0">
+                     <HBox.margin>
+                        <Insets left="3.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <VBox prefHeight="49.0" prefWidth="209.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <HBox prefHeight="26.0" prefWidth="209.0">
+                           <children>
+                              <Label fx:id="labelTipo" text="Tipo:">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="labelOpcion" text="Banquete">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="23.0" prefWidth="209.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Pane prefHeight="54.0" prefWidth="560.0">
+               <children>
+                  <ImageView fitHeight="53.0" fitWidth="294.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Recursos/salonHabana.jpg" />
+                     </image></ImageView>
+               </children>
+            </Pane>
+            <HBox prefHeight="26.0" prefWidth="558.0">
+               <children>
+                  <HBox prefHeight="31.0" prefWidth="354.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onActionButtonLimpiar" text="Limpiar">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="276.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onActionButtonAceptar" text="Aceptar">
+                           <HBox.margin>
+                              <Insets left="30.0" top="5.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Button fx:id="bcancelar" mnemonicParsing="false" onAction="#onActionButtonCancelar" text="Cancelar">
+                           <HBox.margin>
+                              <Insets left="30.0" top="5.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow height="9.14" radius="1.7850000000000001" spread="0.13" width="0.0" />
+                           </effect>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
