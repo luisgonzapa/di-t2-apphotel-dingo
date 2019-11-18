@@ -249,7 +249,7 @@ public class SalonHabanaController implements Initializable {
                 if ((reserva.getTipo().equals("Jornada") || reserva.getTipo().equals("Congreso")) && Integer.parseInt(textFieldNumPer.getText()) < 50) {
                     reserva.setNumPersonas(Integer.parseInt(textFieldNumPer.getText()));
                 }
-                else {
+                else if((reserva.getTipo().equals("Jornada") || reserva.getTipo().equals("Congreso")) && Integer.parseInt(textFieldNumPer.getText()) > 50) {
                     Alert alert = new Alert(AlertType.INFORMATION);
                     alert.setHeaderText("El numero de personas para reservar este tipo debe ser menor de 50");
                     alert.showAndWait();
