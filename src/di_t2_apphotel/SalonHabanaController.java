@@ -244,14 +244,21 @@ public class SalonHabanaController implements Initializable {
             }
 
             reserva.setTipoCocina(comboBoxTipo.getValue());
-            try {
+           try {
 
-                if (reserva.getTipo() == "Jornada" || reserva.getTipo() == "Congreso" && Integer.parseInt(textFieldNumPer.getText()) < 50) {
+                if ((reserva.getTipo().equals("Jornada") || reserva.getTipo().equals("Congreso")) && Integer.parseInt(textFieldNumPer.getText()) < 50) {
                     reserva.setNumPersonas(Integer.parseInt(textFieldNumPer.getText()));
                 }
+                else {
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setHeaderText("El numero de personas para reservar este tipo debe ser menor de 50");
+                    alert.showAndWait();
+                    entityManager.getTransaction().rollback();
+                    return;
+               }
             } catch (RollbackException ex) {
                 Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setHeaderText("El numero de personas para reservar este tipo debe ser menor de 50");
+                alert.setHeaderText("Error al guardar en la base de datos");
                 alert.setContentText(ex.getLocalizedMessage());
                 alert.showAndWait();
             } catch (NumberFormatException ex) {
@@ -260,12 +267,18 @@ public class SalonHabanaController implements Initializable {
 
             try {
 
-                if (reserva.getTipo() == "Banquete" && Integer.parseInt(textFieldNumPer.getText()) < 100) {
+                if (reserva.getTipo().equals("Banquete") && Integer.parseInt(textFieldNumPer.getText()) < 100) {
                     reserva.setNumPersonas(Integer.parseInt(textFieldNumPer.getText()));
+                } else {
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setHeaderText("El numero de personas para reservar este tipo debe ser menor de 100");
+                    alert.showAndWait();
+                    entityManager.getTransaction().rollback();
+                    return;
                 }
             } catch (RollbackException ex) {
                 Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setHeaderText("El numero de personas para reservar este tipo debe ser menor de 100");
+                alert.setHeaderText("Error al guardar en la base de datos");
                 alert.setContentText(ex.getLocalizedMessage());
                 alert.showAndWait();
             } catch (NumberFormatException ex) {
